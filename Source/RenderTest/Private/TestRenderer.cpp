@@ -24,7 +24,7 @@ FTestRenderer::~FTestRenderer()
 }
 
 
-
+IMPLEMENT_GLOBAL_SHADER(FMyCS, "/RenderTest/RadiationShaders.usf", "MainCS", SF_Compute);
 
 
 void FTestRenderer::Render(FPostOpaqueRenderParameters& InParameters)
