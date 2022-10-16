@@ -5,13 +5,7 @@
 
 float2 UVScale;
 
-RWTexture3D<float> OutUAV;
-
-Texture3D<float> VolumeTexture;
-SamplerState VolumeSampler;
-
-
-
+RWTexture3D<float4> OutUAV;
 StructuredBuffer<float4> InDataBuffer;
 
 float simple_distance_sum(float3 samplePosition)
@@ -44,6 +38,6 @@ void MainCS(
 {
     float3 pos = float3(0, 0, 0) + float3(500, 500, 500) * DispatchThreadId / 512.0f;
     float val = simple_distance_sum(pos);
-    OutUAV[DispatchThreadId.xyz] = val;
+    OutUAV[DispatchThreadId.xyz] = InDataBuffer[4];
 }
 

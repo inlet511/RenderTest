@@ -2,6 +2,10 @@
 #include "CoreMinimal.h"
 #include "Renderer/Private/SceneRendering.h"
 
+struct MyStruct {
+
+};
+
 class FTestRenderer
 {
 public:
